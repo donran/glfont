@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/go-gl/gl/all-core/gl"
+	"github.com/go-gl/gl/v4.2-core/gl"
 )
 
 // Direction represents the direction in which strings should be rendered.
@@ -82,7 +82,6 @@ func (f *Font) UpdateResolution(windowWidth int, windowHeight int) {
 
 // Printf draws a string to the screen, takes a list of arguments like printf
 func (f *Font) Printf(x, y float32, scale float32, fs string, argv ...interface{}) error {
-
 	indices := []rune(fmt.Sprintf(fs, argv...))
 
 	if len(indices) == 0 {
@@ -168,7 +167,6 @@ func (f *Font) Printf(x, y float32, scale float32, fs string, argv ...interface{
 
 // Width returns the width of a piece of text in pixels
 func (f *Font) Width(scale float32, fs string, argv ...interface{}) float32 {
-
 	var width float32
 
 	indices := []rune(fmt.Sprintf(fs, argv...))
